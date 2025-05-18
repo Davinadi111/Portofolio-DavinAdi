@@ -1,54 +1,117 @@
-<header>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Davin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ecf0f1;
+    }
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+    nav {
+      background-color: #2c3e50;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    }
 
-# GitHub Pages
+    nav button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+    nav button:hover {
+      background-color: #2980b9;
+    }
 
-</header>
+    .page {
+      display: none;
+      padding: 30px;
+      background-color: white;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+    .page.active {
+      display: block;
+    }
 
-## Step 1: Enable GitHub Pages
+    h1 {
+      color: #2c3e50;
+    }
 
-_Welcome to GitHub Pages and Jekyll :tada:!_
+    ul {
+      padding-left: 20px;
+    }
 
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
+    p, li {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
 
-### :keyboard: Activity: Enable GitHub Pages
+  <nav>
+    <button onclick="showPage('beranda')">Beranda</button>
+    <button onclick="showPage('prestasi')">Prestasi & Pengalaman</button>
+    <button onclick="showPage('skill')">Skill</button>
+  </nav>
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
+  <div id="beranda" class="page active">
+    <h1>Selamat Datang di Portofolio Saya</h1>
+    <p><strong>Nama:</strong> Davin Adi Faringga</p>
+    <p><strong>Alamat:</strong> Silirbaru, Pesanggaran, Banyuwangi</p>
+    <p><strong>Umur:</strong> 16 Tahun</p>
+    <p><strong>Riwayat Pendidikan:</strong></p>
+    <ul>
+      <li>TK Pertiwi 5</li>
+      <li>SDN 2 Pesanggaran</li>
+      <li>SMPN 2 Pesanggaran</li>
+      <li>SMAN 1 Pesanggaran</li>
+    </ul>
+    <p>Saya sangat antusias untuk terus belajar dan berkembang dalam berbagai bidang digital. Semoga portofolio ini menjadi awal dari perjalanan panjang menuju masa depan yang gemilang.</p>
+  </div>
 
-<footer>
+  <div id="prestasi" class="page">
+    <h1>Prestasi dan Pengalaman</h1>
+    <p>Saya pernah menjadi anggota <strong>Paskibra tingkat Kecamatan</strong>, pengalaman yang membentuk kedisiplinan dan rasa cinta tanah air. Selain itu, saya juga pernah dipercaya untuk <strong>menyambut Kepala Pendidikan Cabang Banyuwangi</strong> sebagai pasukan baris-berbaris di SMAN 1 Pesanggaran.</p>
+    <p>Pengalaman ini sangat berkesan dan membangun rasa percaya diri serta kemampuan bekerja dalam tim.</p>
+  </div>
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+  <div id="skill" class="page">
+    <h1>Skill</h1>
+    <ul>
+      <li>Membuat portofolio yang menarik</li>
+      <li>Mengedit menggunakan Canva</li>
+      <li>Membuat prompt ChatGPT</li>
+      <li>Keterampilan digital lainnya</li>
+    </ul>
+    <p>Saya terus mengembangkan diri dalam dunia digital dan teknologi. Dengan semangat belajar yang tinggi, saya percaya bahwa setiap keterampilan akan menjadi bekal berharga untuk masa depan saya.</p>
+  </div>
 
----
+  <script>
+    function showPage(pageId) {
+      // Sembunyikan semua halaman
+      document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+      });
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+      // Tampilkan halaman yang dipilih
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+</body>
+</html>
